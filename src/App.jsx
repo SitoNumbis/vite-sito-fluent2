@@ -1,10 +1,9 @@
+import { Button } from "@fluentui/react-components";
 
-
-function App() {
-
+export default function App() {
   return (
-    <div></div>
-  )
+    <div className="min-h-[100vh] w-full">
+      <Button appearance="primary">Hello Fluent UI React</Button>
+    </div>
+  );
 }
-
-export default App

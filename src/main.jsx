@@ -1,13 +1,13 @@
 import ReactDOM from "react-dom/client";
 
+import { FluentProvider, webDarkTheme } from "@fluentui/react-components";
+
 // app
 import App from "./App.jsx";
 
 // contexts
-import { NotificationProvider } from "./contexts/NotificationProvider";
 import { LanguageProvider } from "./contexts/LanguageProvider";
 import { UserProvider } from "./contexts/UserProvider";
-import { ModeProvider } from "./contexts/ModeProvider";
 
 // styles
 import "./index.css";
@@ -23,11 +23,9 @@ import "tippy.js/dist/tippy.css"; // optional
 ReactDOM.createRoot(document.getElementById("root")).render(
   <LanguageProvider>
     <UserProvider>
-      <ModeProvider>
-        <NotificationProvider>
-          <App />
-        </NotificationProvider>
-      </ModeProvider>
+      <FluentProvider theme={webDarkTheme}>
+        <App />
+      </FluentProvider>
     </UserProvider>
   </LanguageProvider>
 );
